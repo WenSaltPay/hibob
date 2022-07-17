@@ -10,7 +10,10 @@ defmodule HiBob.Hibob.Schemas.User do
     field(:saltpay_entity, :string )
     field(:department, :string)
 
-    has_many(:assigned)
+    has_one(:assigned_buddy, HiBob.Hibob.Schemas.User, on_replace: :raise)
+
+    timestamps()
+
   end
 
 end
